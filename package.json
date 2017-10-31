@@ -1,0 +1,25 @@
+{
+  "name": "ramverk2",
+  "version": "1.0.0",
+  "description": "My me-page for the course \"ramverk2\" at Blekinge Tekniska Högskola",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/almrooth/ramverk2.git"
+  },
+  "author": "Tobias Almroth",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/almrooth/ramverk2/issues"
+  },
+  "homepage": "https://github.com/almrooth/ramverk2#readme",
+  "devDependencies": {
+    "eslint": "^4.10.0",
+    "eslint-plugin-react": "^7.4.0",
+    "stylelint": "^8.2.0"
+  }
+}
