@@ -1,0 +1,13 @@
+filter:
+    excluded_paths: [node_modules/*]
+
+build:
+    environment:
+        node: '0.12.4'
+    
+    dependepecies:
+        before:
+            - 'make install'
+    
+    tests:
+        - 'make test'
