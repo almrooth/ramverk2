@@ -1,0 +1,1 @@
+# Kmom 06 - Egen modul

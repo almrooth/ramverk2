@@ -1,6 +1,5 @@
-# Me-page for the course "ramverk2" at Blekinge Tekniska Högskola
+# Me-page for the course "ramverk2" at BTH
 
-## Tech
-
-* API using express.js for the backend
-* REACT client app for the frontend
+* Express.js server
+* Handlebars templating engine
+* Markdown support
