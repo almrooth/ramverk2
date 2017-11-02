@@ -44,7 +44,28 @@ app.use((err, req, res, next) => {
 });
 
 // Start server
-const port = process.env.DBWEBB_PORT || 1337;
+const port = normalizePort(process.env.DBWEBB_PORT || '1337');
 
 console.log('Server running, listening on port ' + port + '...');
 app.listen(port);
+
+
+/**
+ * Normalize a port into a number, string, or false.
+ */
+
+function normalizePort(val) {
+    let port = parseInt(val, 10);
+
+    if (isNaN(port)) {
+        // named pipe
+        return val;
+    }
+
+    if (port >= 0) {
+        // port number
+        return port;
+    }
+
+    return false;
+}
