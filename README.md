@@ -34,14 +34,10 @@ $ npm start
 
 ## Testing
 Tests available for app: 
-* eslint
-* stylelint
+* eslint `make eslint`
+* stylelint `make stylelint`
 
-1. Install test tools
-```
-make setup-tools-js
-```
-2. Run tests
+To Run all tests
 ```
 make test
 ```
