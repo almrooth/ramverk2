@@ -20,23 +20,28 @@
 ## Setup
 1. Clone the repo
 ```
-git clone https://github.com/almrooth/ramverk2.git 
+$ git clone https://github.com/almrooth/ramverk2.git 
 ```
 2. Install dependencies
 ```
-npm install / make install
+$ npm install / make install
 ```
 3. Run server
 ```
-node app
+$ npm start
 ```
 4. Open in browser `http://localhost:1337`
 
-### Testing
+## Testing
 Tests available for app: 
 * eslint
 * stylelint
 
+1. Install test tools
+```
+make setup-tools-js
+```
+2. Run tests
 ```
 make test
 ```
