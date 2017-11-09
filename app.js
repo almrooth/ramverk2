@@ -13,7 +13,11 @@ app.engine('.hbs', exphbs({defaultLayout: 'layout', extname: '.hbs'}));
 app.set('view engine', 'hbs');
 
 // Logger
-app.use(logger('dev'));
+if (process.env.NODE_ENV == "production") {
+    app.use(logger('combined'));
+} else {
+    app.use(logger('dev'));
+}
 
 // Static files
 app.use(express.static(path.join(__dirname, 'public')));
