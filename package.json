@@ -9,6 +9,7 @@
     "stylelint": "stylelint **/*.css",
     "test": "nyc mocha test/**/*.js",
     "posttest": "npm run eslint && npm run stylelint",
+    "test-scrutinizer": "nyc --all --reporter=clover mocha test/**/*.js",
     "test1": "docker-compose run node-alpine-latest-test",
     "test2": "docker-compose run node-alpine-8-test",
     "test3": "docker-compose run node-alpine-7-test"
