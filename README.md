@@ -9,6 +9,7 @@
 * Scrutinizer
 [![Build Status](https://scrutinizer-ci.com/g/almrooth/ramverk2/badges/build.png?b=master)](https://scrutinizer-ci.com/g/almrooth/ramverk2/build-status/master)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/almrooth/ramverk2/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/almrooth/ramverk2/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/almrooth/ramverk2/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/almrooth/ramverk2/?branch=master)
 
 
 ## Tech stack
@@ -24,7 +25,7 @@ $ git clone https://github.com/almrooth/ramverk2.git
 ```
 2. Install dependencies
 ```
-$ npm install / make install
+$ npm install
 ```
 3. Run server
 ```
@@ -34,10 +35,17 @@ $ npm start
 
 ## Testing
 Tests available for app: 
-* eslint `make eslint`
-* stylelint `make stylelint`
+* eslint `npm run eslint`
+* stylelint `npm run stylelint`
 
 To Run all tests
 ```
-make test
+npm test
 ```
+
+### Docker
+The app can be tested in 3 different docker containers / environments
+
+* Node Alpine latest `npm run test1`
+* Node Alpine 8 `npm run test2`
+* Node Alpine 7 `npm run test3`
