@@ -4,8 +4,11 @@
   "description": "My me-page for the course \"ramverk2\" at Blekinge Tekniska Högskola",
   "main": "index.js",
   "scripts": {
+    "start": "node app.js",
     "test": "nyc --reporter=html --reporter=text mocha 'test/**/*.js'",
-    "start": "node app.js"
+    "test1": "docker-compose run node-alpine-latest-test",
+    "test2": "docker-compose run node-alpine-8-test",
+    "test3": "docker-compose run node-alpine-7-test"
   },
   "repository": {
     "type": "git",

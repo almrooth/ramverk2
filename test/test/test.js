@@ -1,5 +1,3 @@
-/* eslint-env mocha */
-
 /**
  * File to test unittests
  */
