@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "node app.js",
-    "test": "nyc --reporter=html --reporter=text mocha 'test/**/*.js'",
+    "eslint": "eslint .",
+    "stylelint": "stylelint **/*.css",
+    "test": "nyc mocha test/**/*.js",
+    "posttest": "npm run eslint && npm run stylelint",
     "test1": "docker-compose run node-alpine-latest-test",
     "test2": "docker-compose run node-alpine-8-test",
     "test3": "docker-compose run node-alpine-7-test"
@@ -23,6 +26,7 @@
   "devDependencies": {
     "eslint": "^4.10.0",
     "eslint-plugin-react": "^7.4.0",
+    "javascript-style-guide": "^0.9.10",
     "mocha": "^4.0.1",
     "nyc": "^11.3.0",
     "stylelint": "^8.2.0"
