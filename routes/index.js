@@ -27,6 +27,13 @@ router.get('/about', (req, res) => {
     });
 });
 
+// App route
+router.get('/app', (req, res) => {
+    res.render('app', {
+        title: 'Min app'
+    });
+});
+
 // Reports routes
 router.get('/reports/:page', (req, res, next) => {
     let page = req.params.page;
