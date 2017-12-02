@@ -2,11 +2,18 @@ const express = require('express');
 const path = require('path');
 const exphbs = require('express-handlebars');
 const logger = require('morgan');
+const http = require('http');
 
 const index = require('./routes/index');
 const api = require('./routes/api');
 
 const app = express();
+const server = http.createServer(app);
+
+// Websocket chat server
+const wss = require('./src/chat/server');
+
+wss(server);
 
 // Template engine
 app.engine('.hbs', exphbs({defaultLayout: 'layout', extname: '.hbs'}));
@@ -51,7 +58,7 @@ app.use((err, req, res, next) => {
 const port = normalizePort(process.env.DBWEBB_PORT || '1337');
 
 console.log('Server running, listening on port ' + port + '...');
-app.listen(port);
+server.listen(port);
 
 
 /**

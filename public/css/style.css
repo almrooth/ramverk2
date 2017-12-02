@@ -18,3 +18,12 @@
 .index-me img {
     border-radius: 50%;
 }
+
+/* Chat */
+.sign-in .help {
+    display: none;
+}
+
+.signed-in {
+    display: none;
+}

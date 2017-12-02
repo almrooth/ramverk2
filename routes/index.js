@@ -34,6 +34,13 @@ router.get('/app', (req, res) => {
     });
 });
 
+// Chat page
+router.get('/chat', (req, res) => {
+    res.render('chat', {
+        title: 'Chat'
+    });
+});
+
 // Reports routes
 router.get('/reports/:page', (req, res, next) => {
     let page = req.params.page;
