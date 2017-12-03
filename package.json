@@ -8,7 +8,7 @@
     "start-dev": "nodemon app",
     "eslint": "eslint .",
     "stylelint": "stylelint **/*.css",
-    "test": "nyc mocha test/**/*.js",
+    "test": "nyc mocha test/**/*.js --exit",
     "posttest": "npm run eslint && npm run stylelint",
     "test-scrutinizer": "nyc --all --reporter=clover mocha test/**/*.js",
     "test1": "docker-compose run node-alpine-latest-test",
