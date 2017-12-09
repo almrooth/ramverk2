@@ -6,8 +6,8 @@
   "scripts": {
     "start": "node app.js",
     "start-dev": "nodemon app",
-    "eslint": "eslint .",
-    "stylelint": "stylelint **/*.css",
+    "eslint": "./node_modules/.bin/eslint .",
+    "stylelint": "./node_modules/.bin/stylelint **/*.css",
     "mocha": "nyc mocha test/**/*.js --exit",
     "test": "nyc mocha test/**/*.js --exit",
     "posttest": "npm run eslint && npm run stylelint",
