@@ -1,0 +1,28 @@
+<section class="section">
+    <div class="container">
+        <div class="columns">
+            <div class="column is-8 is-offset-2">
+                <h1 class="title">{{ book.title }}</h1>
+                <h2 class="subtitle">av {{ book.author }}</h2>
+
+                <div class="box">
+                    <aritcle class="media">
+                        <div class="media-left">
+                            <figure class="image">
+                                <img src="{{ book.imgUrl }}" alt="Bokomslag">
+                            </figure>
+                        </div>
+                        <div class="media-content">
+                            <div class="content">
+                                <p><strong>Titel: </strong>{{ book.title }}</p>
+                                <p><strong>Författare: </strong>{{ book.author }}</p>
+                                <p><strong>ISBN: </strong>{{ book.isbn }}</p>
+                                <p><a href="{{ book.bookUrl }}">Boken på Bokus</a></p>
+                            </div>
+                        </div>
+                    </aritcle>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

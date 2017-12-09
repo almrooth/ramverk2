@@ -3,9 +3,11 @@ const path = require('path');
 const exphbs = require('express-handlebars');
 const logger = require('morgan');
 const http = require('http');
+const bodyParser = require('body-parser');
 
 const index = require('./routes/index');
-const api = require('./routes/api');
+const api   = require('./routes/api');
+const books = require('./routes/books');
 
 const app = express();
 const server = http.createServer(app);
@@ -26,12 +28,17 @@ if (process.env.NODE_ENV == "production") {
     app.use(logger('dev'));
 }
 
+// Body parser
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+
 // Static files
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Use routes
 app.use('/', index);
 app.use('/api', api);
+app.use('/books', books);
 
 // 404
 app.use((req, res, next) => {

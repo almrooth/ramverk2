@@ -1,0 +1,44 @@
+<section class="section">
+    <div class="container">
+        <div class="columns">
+            <div class="column is-8 is-offset-2">
+                <h1 class="title">Biblioteket</h1>
+
+                <a href="/books/create"><button class="button is-primary">Ny bok</button></a>
+
+                <table class="table is-fullwidth is-hoverable">
+                    <thead>
+                        <tr>
+                            <th>Titel</th>
+                            <th>Författare</th>
+                            <th>ISBN</th>
+                            <th>Bokus</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each books}}
+                            <tr>
+                                <td><a href="/books/{{ this._id }}">{{ this.title }}</a></td>
+                                <td>{{ this.author }}</td>
+                                <td>{{ this.isbn }}</td>
+                                <td><a href="{{ this.bookUrl }}">Köp här</a></td>
+                                <td>
+                                    <span class="icon">
+                                        <a href="/books/{{ this._id }}/edit" class="has-text-info"><i class="fa fa-pencil"></i></a>
+                                        </form>
+                                    </span>
+
+                                    <span class="icon">
+                                        <a href="/books/{{ this._id }}/delete" class="has-text-danger"><i class="fa fa-ban"></i></a>
+                                        </form>
+                                    </span>
+                                </td>
+                            </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>

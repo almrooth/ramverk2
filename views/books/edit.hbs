@@ -1,0 +1,43 @@
+<section class="section">
+    <div class="container">
+        <div class="columns">
+            <div class="column is-8 is-offset-2">
+                <h1 class="title">Redigera book</h1>
+
+                <form method="POST">
+                    <input type="hidden" name="id" value="{{ book._id }}">
+
+                    <div class="field">
+                        <label for="title" class="label">Titel</label>
+                        <input type="text" class="input" name="title" value="{{ book.title }}">
+                    </div>
+                    <div class="field">
+                        <label for="author" class="label">Författare</label>
+                        <input type="text" class="input" name="author" value="{{ book.author }}">
+                    </div>
+                    <div class="field">
+                        <label for="isbn" class="label">ISBN</label>
+                        <input type="text" class="input" name="isbn" value="{{ book.isbn }}">
+                    </div>
+                    <div class="field">
+                        <label for="bookUrl" class="label">Länk</label>
+                        <input type="text" class="input" name="bookUrl" value="{{ book.bookUrl }}">
+                    </div>
+                    <div class="field">
+                        <label for="imgUrl" class="label">Bildlänk</label>
+                        <input type="text" class="input" name="imgUrl" value="{{ book.imgUrl }}">
+                    </div>
+
+                    <div class="field is-grouped">
+                        <div class="control">
+                            <button type="submit" class="button is-primary">Spara</button>
+                        </div>
+                        <div class="control">
+                            <button type="reset" class="button is-danger">Reset</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
