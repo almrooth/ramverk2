@@ -1,6 +1,6 @@
 {
   "name": "ramverk2",
-  "version": "5.0.1",
+  "version": "5.0.2",
   "description": "My me-page for the course \"ramverk2\" at Blekinge Tekniska Högskola",
   "main": "index.js",
   "scripts": {
