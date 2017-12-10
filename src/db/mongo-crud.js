@@ -1,128 +1,151 @@
 'use strict';
 
 /**
- * Module handling CRUD on MongoDB
- */
+* Module handling CRUD on MongoDB
+*/
 
 const MongoClient = require('mongodb').MongoClient;
 const ObjectId = require('mongodb').ObjectId;
 
 
 /**
- * Export module
- *
- * @param {string} dsn of DB
- * @param {string} collection to use
- *
- * @return {function} The module
- */
+* Export module
+*
+* @param {string} dsn of DB
+* @param {string} collection to use
+*
+* @return {function} The module
+*/
 module.exports = (dsn, collection) => {
     /**
-     * Create and return connection to DB
-     *
-     * @async
-     *
-     * @return {object} Connection and collection
-     */
+    * Create and return connection to DB
+    *
+    * @async
+    *
+    * @return {object} Connection and collection
+    */
     async function connect() {
-        const db    = await MongoClient.connect(dsn);
-        const col   = await db.collection(collection);
+        try {
+            const db    = await MongoClient.connect(dsn);
+            const col   = await db.collection(collection);
 
-        return { db, col };
+            return { db, col };
+        } catch (error) {
+            throw error;
+        }
     }
 
 
     return {
         /**
-         * Get all items in collection
-         *
-         * @async
-         *
-         * @return {array} The items in collection
-         */
+        * Get all items in collection
+        *
+        * @async
+        *
+        * @return {array} The items in collection
+        */
         async index() {
-            const { db, col } = await connect();
-            const res = await col.find().toArray();
+            try {
+                const { db, col } = await connect();
+                const res = await col.find().toArray();
 
-            await db.close();
-            return res;
+                await db.close();
+                return res;
+            } catch (error) {
+                throw error;
+            }
         },
 
 
         /**
-         * Insert item
-         *
-         * @async
-         *
-         * @param {object} item the item to insert
-         *
-         * @return {object} Inserted item
-         */
+        * Insert item
+        *
+        * @async
+        *
+        * @param {object} item the item to insert
+        *
+        * @return {object} Inserted item
+        */
         async create(item) {
-            const { db, col } = await connect();
+            try {
+                const { db, col } = await connect();
 
-            const res = await col.insertOne(item);
+                const res = await col.insertOne(item);
 
-            await db.close();
-            return res.ops[0];
+                await db.close();
+                return res.ops[0];
+            } catch (error) {
+                throw error;
+            }
         },
 
 
         /**
-         * Get item by id
-         *
-         * @async
-         *
-         * @param {string} id of item
-         *
-         * @return {object} Requested item
-         */
+        * Get item by id
+        *
+        * @async
+        *
+        * @param {string} id of item
+        *
+        * @return {object} Requested item
+        */
         async read(id) {
-            const { db, col } = await connect();
-            const res = await col.findOne({ _id: ObjectId(id)});
+            try {
+                const { db, col } = await connect();
+                const res = await col.findOne({ _id: ObjectId(id)});
 
-            await db.close();
-            return res;
+                await db.close();
+                return res;
+            } catch (error) {
+                throw error;
+            }
         },
 
 
         /**
-         * Update item by id
-         *
-         * @async
-         *
-         * @param {string} id of item
-         * @param {object} item keys and values to upadate
-         *
-         * @return {object} Updated item
-         */
+        * Update item by id
+        *
+        * @async
+        *
+        * @param {string} id of item
+        * @param {object} item keys and values to upadate
+        *
+        * @return {object} Updated item
+        */
         async update(id, item) {
-            const { db, col } = await connect();
+            try {
+                const { db, col } = await connect();
 
-            const res = await col.findOneAndUpdate({ _id: ObjectId(id)},
-                { $set: item });
+                const res = await col.findOneAndUpdate({ _id: ObjectId(id)}, { $set: item });
 
-            await db.close();
-            return res;
+                await db.close();
+                return res;
+            } catch (error) {
+                throw error;
+            }
         },
 
 
         /**
-         * Delete item by id
-         *
-         * @async
-         *
-         * @param {string} id of item
-         *
-         * @return {object} Deleted item
-         */
+        * Delete item by id
+        *
+        * @async
+        *
+        * @param {string} id of item
+        *
+        * @return {object} Deleted item
+        */
         async delete(id) {
-            const { db, col } = await connect();
+            try {
+                const { db, col } = await connect();
 
-            const res = await col.findOneAndDelete({ _id: ObjectId(id) });
+                const res = await col.findOneAndDelete({ _id: ObjectId(id) });
 
-            await db.close();
-            return res;
+                await db.close();
+                return res;
+            } catch (error) {
+                throw error;
+            }
         }
     };
 };

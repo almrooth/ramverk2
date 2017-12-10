@@ -22,17 +22,19 @@
                                 <td><a href="/books/{{ this._id }}">{{ this.title }}</a></td>
                                 <td>{{ this.author }}</td>
                                 <td>{{ this.isbn }}</td>
-                                <td><a href="{{ this.bookUrl }}">Köp här</a></td>
+                                <td><a href="{{ this.bookUrl }}">Länk</a></td>
                                 <td>
-                                    <span class="icon">
-                                        <a href="/books/{{ this._id }}/edit" class="has-text-info"><i class="fa fa-pencil"></i></a>
-                                        </form>
-                                    </span>
+                                    <div class="field is-grouped">
+                                        <span class="icon">
+                                            <a href="/books/{{ this._id }}/edit" class="has-text-info"><i class="fa fa-pencil"></i></a>
+                                            </form>
+                                        </span>
 
-                                    <span class="icon">
-                                        <a href="/books/{{ this._id }}/delete" class="has-text-danger"><i class="fa fa-ban"></i></a>
-                                        </form>
-                                    </span>
+                                        <span class="icon">
+                                            <a href="/books/{{ this._id }}/delete" class="has-text-danger"><i class="fa fa-ban"></i></a>
+                                            </form>
+                                        </span>
+                                    </div>
                                 </td>
                             </tr>
                         {{/each}}
