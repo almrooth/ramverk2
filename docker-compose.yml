@@ -34,32 +34,32 @@ services:
   #     - ./:/home/node/app/
   #   command: "npm start"
 
-  # node-alpine-latest-test:
-  #   build:
-  #     context: .
-  #     dockerfile: docker/Dockerfile-node-alpine
-  #   volumes:
-  #     - ./:/home/node/app/
-  #     - /home/node/app/node_modules/
-  #   command: "npm test"
+  node-alpine-latest-test:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile-node-alpine
+    volumes:
+      - ./:/home/node/app/
+      - /home/node/app/node_modules/
+    command: "npm test"
 
-  # node-alpine-8-test:
-  #   build:
-  #     context: .
-  #     dockerfile: docker/Dockerfile-node-alpine-8
-  #   volumes:
-  #     - ./:/home/node/app/
-  #     - /home/node/app/node_modules/
-  #   command: "npm test"
+  node-alpine-8-test:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile-node-alpine-8
+    volumes:
+      - ./:/home/node/app/
+      - /home/node/app/node_modules/
+    command: "npm test"
 
-  # node-alpine-7-test:
-  #   build:
-  #     context: .
-  #     dockerfile: docker/Dockerfile-node-alpine-7
-  #   volumes:
-  #     - ./:/home/node/app/
-  #     - /home/node/app/node_modules/
-  #   command: "npm test"
+  node-alpine-7-test:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile-node-alpine-7
+    volumes:
+      - ./:/home/node/app/
+      - /home/node/app/node_modules/
+    command: "npm test"
 
   express:
     build:

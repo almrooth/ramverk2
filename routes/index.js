@@ -41,6 +41,13 @@ router.get('/chat', (req, res) => {
     });
 });
 
+// Module page
+router.get('/module', (req, res) => {
+    res.render('module', {
+        title: 'Min modul'
+    });
+});
+
 // Reports routes
 router.get('/reports/:page', (req, res, next) => {
     let page = req.params.page;

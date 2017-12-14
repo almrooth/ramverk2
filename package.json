@@ -14,9 +14,9 @@
     "test": "nyc mocha test/**/*.js --exit",
     "posttest": "npm run eslint && npm run stylelint",
     "test-scrutinizer": "nyc --all --reporter=clover mocha test/**/*.js --exit",
-    "test1": "docker-compose run node-alpine-latest-test",
-    "test2": "docker-compose run node-alpine-8-test",
-    "test3": "docker-compose run node-alpine-7-test",
+    "test-docker-latest": "docker-compose run node-alpine-latest-test",
+    "test-docker-8": "docker-compose run node-alpine-8-test",
+    "test-docker-7": "docker-compose run node-alpine-7-test",
     "docker-mongodb": "docker-compose up -d mongodb",
     "docker-express": "docker-compose up -d express"
   },
@@ -48,6 +48,7 @@
     "font-awesome": "^4.7.0",
     "markdown": "^0.5.0",
     "markdown-it": "^8.4.0",
+    "mongo-crud-simple": "^1.0.1",
     "mongodb": "^2.2.33",
     "morgan": "^1.9.0",
     "ws": "^3.3.2"

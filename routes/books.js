@@ -2,7 +2,8 @@ const express = require('express');
 const router = express.Router();
 
 const dsn = process.env.DBWEBB_DSN || 'mongodb://127.0.0.1:27017/ramverk2';
-const books = require('../src/db/mongo-crud')(dsn, 'books');
+// const books = require('../src/db/mongo-crud')(dsn, 'books');
+const books = require('mongo-crud-simple')(dsn, 'books');
 
 
 /**

@@ -1,7 +1,7 @@
 'use strict';
 
 /**
-* Module handling CRUD on MongoDB
+* Module handling simple CRUD on MongoDB
 */
 
 const MongoClient = require('mongodb').MongoClient;
