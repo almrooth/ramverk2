@@ -75,12 +75,12 @@ $ npm run test-docker-latest
 
 Node version 8:
 ```
-$ npm run test-docker-latest
+$ npm run test-docker-8
 ```
 
 Node version 7
 ```
-$ npm run test-docker-latest
+$ npm run test-docker-7
 ```
 
 ## Ports and environment variables
